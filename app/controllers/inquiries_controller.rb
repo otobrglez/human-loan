@@ -7,6 +7,16 @@ class InquiriesController < ApplicationController
     @inquiries = Inquiry.active.page(params[:page]||1)
   end
 
+  def edit
+    @inquiry = Inquiry.find(params[:id])
+    if @inquiry.user_id != current_user.id
+      flash[:error] = "Sorry mate!"
+      redirect_to root_path
+    end
+
+    render :edit
+  end
+
   def show
     @inquiry = Inquiry.find(params[:id])
   end

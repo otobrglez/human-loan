@@ -32,4 +32,26 @@
     .arr_down=" "
 
     .row{style: 'padding: 10px'}
-      %p="If you invest into #{inquiry.user.public_name}, in 1 month you will get #{inquiry.rates[:m_1].format}, if he pays in 6 mounths you'll get #{inquiry.rates[:m_6].format} and if he pays after 12 months he is giving you back #{inquiry.rates[:m_12].format}."
+      .col-sm-6
+        %table.table.table-condensed.score-tabel
+          %thead
+            %tr
+              %td
+                %h1=inquiry.rates[:m_1].format
+              %td
+                %h1=inquiry.rates[:m_6].format
+              %td
+                %h1=inquiry.rates[:m_12].format
+          %tbody
+            %tr
+              %th 1 month
+              %th 6 months
+              %th 1 year
+        %p
+          Your potential repayments if you fund
+          %strong=inquiry.user.public_name
+          and if he or she repays you back. Repayments are calculated based on
+          %strong HumanLoan credit score*.
+      .col-sm
+        .pull-right
+          =link_to 'Invest!', root_path, class: %w{btn btn-default btn-sm}

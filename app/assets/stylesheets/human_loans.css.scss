@@ -93,6 +93,12 @@ ul#inquiries{
     &.open {
       display: block;
     }
+
+    .score-table{
+      tbody td, tbody th{
+        background-color: red;
+      }
+    }
   }
 }
 

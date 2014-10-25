@@ -51,6 +51,16 @@ ul#inquiries{
       .inline-tools-wrap {display: block;}
     }
   }
+
+  li.inquiry-details{
+    display: none;
+    background-color: #333;
+    color: white;
+
+    &.open {
+      display: block;
+    }
+  }
 }
 
 .field_with_errors {

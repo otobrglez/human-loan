@@ -5,7 +5,11 @@ $hl_color_bg: #eee;
 
 
   .brand {
+    text-decoration: none;
     font-size: 20px;
+    .mission{
+      color: #CCC;
+    }
   }
 }
 

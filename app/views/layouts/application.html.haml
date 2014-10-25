@@ -9,7 +9,10 @@
   %body
     %header#header
       .container
-        = link_to 'HumanLoan', root_path, class: %w{brand}
+        = link_to root_path, class: %w{brand} do
+          HumanLoan
+          %span.mission Loans from humans to humans.
+
         %p.pull-right
           - if signed_in?
             = current_user.email

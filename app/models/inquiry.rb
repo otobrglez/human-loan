@@ -28,10 +28,11 @@ class Inquiry < ActiveRecord::Base
   def rates_cp
     rates_out=[]
     scores = (0..9).to_a
-    scores.reverse.each do |i|
+    scores.each do |i|
       a = (scores.size-i-1)
       rates_out[i]= BASIC_RATE + (a.to_i*0.5)
     end
+    ###
 
     factors={
       m_1: 1.to_f/12.to_f,
@@ -40,9 +41,9 @@ class Inquiry < ActiveRecord::Base
     }
 
     {
-      m_1: Money.new((amount_cents.to_f * rates_out[score] * factors[:m_1]) + amount_cents, self.amount_currency),
-      m_6: Money.new((amount_cents.to_f * rates_out[score] * factors[:m_6]) + amount_cents, self.amount_currency),
-      y_1: Money.new((amount_cents.to_f * rates_out[score] * factors[:y_1]) + amount_cents, self.amount_currency)
+      m_1: ((amount_cents.to_f * rates_out[score] * factors[:m_1]) + amount_cents.to_f),
+      m_6: ((amount_cents.to_f * rates_out[score] * factors[:m_6]) + amount_cents.to_f),
+      y_1: ((amount_cents.to_f * rates_out[score] * factors[:y_1]) + amount_cents.to_f)
     }
   end
 end

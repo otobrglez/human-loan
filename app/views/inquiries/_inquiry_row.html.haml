@@ -32,4 +32,4 @@
     .arr_down=" "
 
     .row{style: 'padding: 10px'}
-      = inquiry.rates
+      %p="If you invest into #{inquiry.user.public_name}, in 1 month you will get #{inquiry.rates[:m_1]}, if he pays in 6 mounths you'll get #{inquiry.rates[:m_6]} and if he pays after 12 months he is giving you back #{inquiry.rates[:y_1]}."

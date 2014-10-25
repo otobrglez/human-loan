@@ -2,8 +2,13 @@
   .container
     .col-sm-2
       .amount-wrap
-        = inquiry.format_price
-    .col-sm-6.reason-col
+        %h1
+          = inquiry.format_price
+          %small
+            \/
+            %span.badge.score{class: "c-#{inquiry.score}"}=inquiry.score
+
+    .col-sm-7.reason-col
       .col-reason-wrap
         .circle
           =image_tag inquiry.user.gravatar, width: 30
@@ -18,8 +23,6 @@
 
     .col-sm-1.expires_at
       =distance_of_time_in_words_to_now inquiry.expires_at
-    .col-sm-1.score.text-center
-      %span.badge{class: "c-#{inquiry.score}"}=inquiry.score
 
 %li.inquiry-details
   .container

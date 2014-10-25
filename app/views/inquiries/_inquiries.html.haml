@@ -6,14 +6,14 @@
   %ul#inquiries.list-unstyled
     %li.inquiry.header
       .container
+        -# 12 = 3 + 6 + 2 + 1
         .col-sm-2.amount
-          Loan amount
-        .col-sm-6.reason
+          Loan amount / H. Score
+        .col-sm-7.reason
           Reason
         .col-sm-2=" "
         .col-sm-1.expires_at
           When?
-        .col-sm-1.score.text-center="H. Score"
 
     - inquiries = @inquiries.each_with_index do |inquiry, index|
       = render partial: 'inquiry_row', locals: {inquiry: inquiry}

@@ -10,8 +10,9 @@
           Loan amount
         .col-sm-6.reason
           Reason
-        .col-sm-3.expires_at
-          When its needed?
+        .col-sm-2=" "
+        .col-sm-1.expires_at
+          When?
         .col-sm-1.score.text-center="H. Score"
 
     - inquiries = @inquiries.each_with_index do |inquiry, index|

@@ -12,7 +12,11 @@
           .public_name
             = "- #{inquiry.user.public_name}"
 
-    .col-sm-3.expires_at
+    .col-sm-2.inline-tools
+      .inline-tools-wrap
+        =link_to 'More details', root_path, class: %w{btn btn-default}
+
+    .col-sm-1.expires_at
       =distance_of_time_in_words_to_now inquiry.expires_at
     .col-sm-1.score.text-center
       %span.badge{class: "c-#{inquiry.score}"}=inquiry.score

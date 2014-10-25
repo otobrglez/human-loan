@@ -45,6 +45,11 @@ ul#inquiries{
     .amount-wrap{
       font-size: 30px;
     }
+
+    .inline-tools-wrap {display: none;}
+    &:hover {
+      .inline-tools-wrap {display: block;}
+    }
   }
 }
 

@@ -14,6 +14,9 @@ $hl_color_bg: #eee;
 
 ul#inquiries{
   li.inquiry {
+    &.iq-open {
+      border: none;
+    }
 
     // background-color: $hl_color_bg;
     border-bottom: 1px solid $hl_color_bg;
@@ -53,9 +56,13 @@ ul#inquiries{
   }
 
   li.inquiry-details{
+    -moz-box-shadow:    inset 0 0 5px #000000;
+    -webkit-box-shadow: inset 0 0 5px #000000;
+    box-shadow:         inset 0 0 5px #000000;
+
     display: none;
-    background-color: #333;
-    color: white;
+    background-color: #eee;
+    color: #333;
 
     &.open {
       display: block;

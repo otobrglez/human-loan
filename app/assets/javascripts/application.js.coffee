@@ -7,9 +7,14 @@
 $(document).ready ->
 
   $('a.more-details').on 'click', (e)->
+
+    $("li.inquiry").removeClass 'iq-open'
     e.preventDefault() if e.preventDefault?
 
-    next = $(e.currentTarget).parents('.inquiry').next()
+    next = (inquiry = $(e.currentTarget).parents('.inquiry')).next()
+
+    inquiry.addClass('iq-open')
+
     console.log next
 
     return if next.hasClass('open')

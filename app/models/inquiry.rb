@@ -1,5 +1,4 @@
 class Inquiry < ActiveRecord::Base
-  BASIC_RATE = 5.2
 
   belongs_to :user
   validates :reason, presence: true, length: 20..200
@@ -25,25 +24,22 @@ class Inquiry < ActiveRecord::Base
     @rates ||= rates_cp
   end
 
-  def rates_cp
-    rates_out=[]
-    scores = (0..9).to_a
-    scores.each do |i|
-      a = (scores.size-i-1)
-      rates_out[i]= BASIC_RATE + (a.to_i*0.5)
-    end
-    ###
+    BASIC_RATE = 0.052
 
-    factors={
-      m_1: 1.to_f/12.to_f,
-      m_6: 1.to_f/2.to_f,
-      y_1: 1.to_f/1.to_f
+  def rates_cp
+    numbers = (0..9).to_a
+    numbers.map! { |n| BASIC_RATE + n*0.005 }
+
+    durations = {
+      m_1:  1.to_f/12.to_f,
+      m_6:  1.to_f/2.to_f,
+      m_12: 1.to_f
     }
 
     {
-      m_1: ((amount_cents.to_f * rates_out[score] * factors[:m_1]) + amount_cents.to_f),
-      m_6: ((amount_cents.to_f * rates_out[score] * factors[:m_6]) + amount_cents.to_f),
-      y_1: ((amount_cents.to_f * rates_out[score] * factors[:y_1]) + amount_cents.to_f)
+      m_1:  Money.new( (amount_cents* numbers[score]* durations[:m_1])+amount_cents, self.amount_currency),
+      m_6:  Money.new( (amount_cents* numbers[score]* durations[:m_6])+amount_cents, self.amount_currency),
+      m_12: Money.new( (amount_cents* numbers[score]* durations[:m_12])+amount_cents, self.amount_currency)
     }
   end
 end

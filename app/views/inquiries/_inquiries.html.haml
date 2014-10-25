@@ -4,9 +4,8 @@
     Sorry, no loan inquiries,... Be the first. Create one!
 - else
   %ul#inquiries.list-unstyled
-    %li.inquiry.header
+    %li.header
       .container
-        -# 12 = 3 + 6 + 2 + 1
         .col-sm-3.amount
           Loan amount / H. Score
         .col-sm-6.reason
@@ -18,9 +17,9 @@
     - inquiries = @inquiries.each_with_index do |inquiry, index|
       = render partial: 'inquiry_row', locals: {inquiry: inquiry}
 
-#pagination-bottoms
-  .container
-    .row
-      .col-md-12.text-center
-        %ul.pager
-          %li.next=link_to_next_page @inquiries, 'See more loan inquiries...', remote: true
+    %li.paginator
+      .container
+        .row
+          .col-md-12.text-center
+            %ul.pager
+              %li.next=link_to_next_page @inquiries, 'See more loan inquiries...', remote: true

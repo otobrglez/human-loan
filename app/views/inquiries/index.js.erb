@@ -1,11 +1,9 @@
-$("#pagination-bottoms").remove();
+$.when($(".paginator").remove()).then(function(){
+  var partial = $('<%= j render "inquiries" %>');
+  var lis = partial.find('li.paginator, li.inquiry, li.inquiry-details');
+  //.hide();
+  $("#live-inquiries ul").append(lis);
+  // lis.fadeIn();
+  //$(lis).find('li.paginator, li.inquiry').show()
+});
 
-var inquiries = $("<%= j render 'inquiries' %>");
-var pager = inquiries.find('div#pagination-bottoms');
-var lis = inquiries.find('li.inquiry:not(.header)').hide();
-$("#inquiries").append(lis);
-lis.fadeIn();
-
-
-
-$("#live-inquiries").append(pager);

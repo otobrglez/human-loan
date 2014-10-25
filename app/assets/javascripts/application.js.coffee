@@ -1,21 +1,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-# tree
-
 
 $(document).ready ->
 
-  $('a.more-details').on 'click', (e)->
+  $("#live-inquiries").on 'click', 'a.more-details', (e)->
+    e.preventDefault() if e.preventDefault?
 
     $("li.inquiry").removeClass 'iq-open'
-    e.preventDefault() if e.preventDefault?
 
     next = (inquiry = $(e.currentTarget).parents('.inquiry')).next()
 
     inquiry.addClass('iq-open')
-
-    console.log next
 
     return if next.hasClass('open')
 

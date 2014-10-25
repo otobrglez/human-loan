@@ -1,0 +1,77 @@
+$hl_color_bg: #eee;
+
+#header {
+  line-height: 50px;
+
+
+  .brand {
+    font-size: 20px;
+  }
+}
+
+.tools {
+}
+
+ul#inquiries{
+  li.inquiry {
+
+    // background-color: $hl_color_bg;
+    border-bottom: 1px solid $hl_color_bg;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &:last-child {
+      border: none;
+    }
+
+    .col-reason-wrap{
+      position: relative;
+      .circle{
+        position: absolute;
+        left: 0px;
+      }
+
+      .reason{
+        padding-left: 50px;
+        font-size: 16px;
+
+        .public_name {
+          font-style: italic;
+          color: #CCC;
+        }
+      }
+    }
+
+    .amount-wrap{
+      font-size: 30px;
+    }
+  }
+}
+
+.field_with_errors {
+  input[type=text], select, textarea{
+    border: 1px solid red;
+  }
+}
+
+.pager .next > a, .pager .next > span {
+  float: none;
+}
+
+.circle {
+  line-height: 0;
+  display: inline-block;
+  margin: 5px;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 50%; /* relative value */
+  /*box-shadow: 0px 0px 5px rgba(0,0,0,0.4);*/
+  transition: linear 0.25s;
+  height: 32px;
+  width: 32px;
+
+  img{
+    border-radius: 50%; /* relative value for
+           adjustable image size */
+  }
+}
+

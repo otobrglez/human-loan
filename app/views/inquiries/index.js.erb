@@ -1,0 +1,11 @@
+$("#pagination-bottoms").remove();
+
+var inquiries = $("<%= j render 'inquiries' %>");
+var pager = inquiries.find('div#pagination-bottoms');
+var lis = inquiries.find('li.inquiry:not(.header)').hide();
+$("#inquiries").append(lis);
+lis.fadeIn();
+
+
+
+$("#live-inquiries").append(pager);

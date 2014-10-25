@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  username: postgres
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: 'hl_development'
+
+test:
+  <<: *default
+  database: 'hl_test'
+
+production:
+  <<: *default
+  database: 'hl_production'

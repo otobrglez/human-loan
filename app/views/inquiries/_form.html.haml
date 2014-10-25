@@ -1,0 +1,37 @@
+= simple_form_for @inquiry, html:{class: %w{form form-horizontal}} do |f|
+
+  - if ! f.object.errors.empty?
+    %ul
+      - f.object.errors.full_messages.each do |value|
+        %li= value
+
+  .form-group
+    = f.label :amount_cents, 'Amount I need', class: %w{col-sm-2 control-label}
+    .col-sm-10
+      = f.input :amount_cents, input_html:{class: %w{form-control}}, label: false
+
+
+  .form-group
+    = f.label :amount_cents, 'I need it in', class: %w{col-sm-2 control-label}
+    .col-sm-10
+      = f.input :amount_currency, collection: %w{GBP USD EUR}, include_blank: false, input_html:{class: %w{form-control}}, label: false
+
+  .form-group
+    = f.label :expires_at, 'I need it till', class: %w{col-sm-2 control-label}
+    .col-sm-10
+      = f.input :expires_at, label: 'I need it till', input_html: {class: %w{x-form-control}}, label: false
+
+  .form-group
+    = f.label :reason, 'I need it for', class: %w{col-sm-2 control-label}
+    .col-sm-10
+      = f.input :reason, label: false, input_html: {class: %w{form-control}}
+
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      - if f.object.new_record?
+        = f.submit 'Create inquiry', class: %w{btn btn-default}
+      - else
+        = f.submit 'Update inquiry', class: %w{btn btn-default}
+      or
+      = link_to 'Cancel', root_path, class: %w{btn btn-default}
+

@@ -1,0 +1,7 @@
+/doc
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/db/pg-data
+/log/*.log
+/tmp

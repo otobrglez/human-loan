@@ -1,0 +1,8 @@
+.container
+  %h1="Inquiry by #{@inquiry.user.public_name}"
+
+  %table.table.table-striped
+    - @inquiry.attributes.except('user_id','id').each do |key, value|
+      %tr
+        %th=key.titleize
+        %td=value

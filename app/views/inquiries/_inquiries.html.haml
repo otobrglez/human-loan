@@ -1,0 +1,25 @@
+
+- if (inquiries = @inquiries).empty?
+  %p
+    Sorry, no loan inquiries,... Be the first. Create one!
+- else
+  %ul#inquiries.list-unstyled
+    %li.inquiry.header
+      .container
+        .col-sm-2.amount
+          Loan amount
+        .col-sm-6.reason
+          Reason
+        .col-sm-3.expires_at
+          When its needed?
+        .col-sm-1.score.text-center="H. Score"
+
+    - inquiries = @inquiries.each_with_index do |inquiry, index|
+      = render partial: 'inquiry_row', locals: {inquiry: inquiry}
+
+#pagination-bottoms
+  .container
+    .row
+      .col-md-12.text-center
+        %ul.pager
+          %li.next=link_to_next_page @inquiries, 'See more loan inquiries...', remote: true

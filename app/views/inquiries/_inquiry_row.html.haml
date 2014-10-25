@@ -1,14 +1,14 @@
 %li.inquiry
   .container
-    .col-sm-2
+    .col-sm-3
       .amount-wrap
         %h1
           = inquiry.format_price
           %small
             \/
-            %span.badge.score{class: "c-#{inquiry.score}"}=inquiry.score
+            %span.badge.score{class: "c-#{inquiry.score}", 'data-toggle'=>"tooltip", 'data-placement'=>"top", 'title'=>"Tooltip on top"}=inquiry.score
 
-    .col-sm-7.reason-col
+    .col-sm-6.reason-col
       .col-reason-wrap
         .circle
           =image_tag inquiry.user.gravatar, width: 30

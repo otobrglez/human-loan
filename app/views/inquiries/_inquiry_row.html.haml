@@ -15,4 +15,4 @@
     .col-sm-3.expires_at
       =distance_of_time_in_words_to_now inquiry.expires_at
     .col-sm-1.score.text-center
-      %span.badge=inquiry.score
+      %span.badge{class: "c-#{inquiry.score}"}=inquiry.score

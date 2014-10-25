@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "inquiries#index"
 
-  resources :inquiries, only: [:new, :create, :index, :show, :edit]
+  resources :inquiries
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

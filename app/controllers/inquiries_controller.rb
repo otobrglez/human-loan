@@ -25,6 +25,21 @@ class InquiriesController < ApplicationController
     @inquiry ||= current_user.inquiries.build
   end
 
+  def update
+    @inquiry = Inquiry.find(params[:id])
+    if @inquiry.user_id != current_user.id
+      flash[:error] = "Sorry mate!"
+      redirect_to root_path
+    end
+
+    if @inquiry.update(inquiry_params)
+      flash[:notice] = 'Your inquiry was updated.'
+      redirect_to root_path
+    else
+      redirect_to :edit
+    end
+  end
+
   def create
     @inquiry = current_user.inquiries.build(inquiry_params)
     if ! @inquiry.save

@@ -6,7 +6,7 @@
           = inquiry.format_price
           %small
             \/
-            %span.badge.score{class: "c-#{inquiry.score}", 'data-toggle'=>"tooltip", 'data-placement'=>"top", 'title'=>"Tooltip on top"}=inquiry.score
+            %span.badge.score{class: "c-#{inquiry.score}"}=inquiry.score
 
     .col-sm-6.reason-col
       .col-reason-wrap
@@ -32,7 +32,4 @@
     .arr_down=" "
 
     .row{style: 'padding: 10px'}
-      %p
-        - 30.times do
-          I have no idea what to put here.
-
+      = inquiry.rates

@@ -24,11 +24,15 @@ class Inquiry < ActiveRecord::Base
     @rates ||= rates_cp
   end
 
-    BASIC_RATE = 0.052
+  def rates_insured
+    @rates_insured ||= rates_cp(AVIVA_RATE)
+  end
 
-  def rates_cp
+  BASIC_RATE = 0.052
+  AVIVA_RATE = 0.060
+  def rates_cp(rate=BASIC_RATE)
     numbers = (0..9).to_a
-    numbers.map! { |n| BASIC_RATE + n*0.005 }
+    numbers.map! { |n| rate + n*0.005 }
 
     durations = {
       m_1:  1.to_f/12.to_f,

@@ -2,7 +2,9 @@
   .container
     %ul.list-inline
       %li
-        =link_to 'Create new loan inquiry', [:new, :inquiry], class: %w{btn btn-default}
+        =link_to [:new, :inquiry], class: %w{btn btn-default} do
+          &plus;
+          Create new loan inquiry
 
 #live-inquiries
   = render 'inquiries'

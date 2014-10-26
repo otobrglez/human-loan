@@ -16,7 +16,7 @@
       .inline-tools-wrap
         .pull-right
           .btn-group
-            =link_to 'Details & Invest', root_path, class: %w{btn btn-default btn-sm more-details}
+            =link_to 'Details & Loaning', root_path, class: %w{btn btn-default btn-sm more-details}
             - if signed_in? and current_user.id == inquiry.user_id
               = link_to 'Edit', edit_inquiry_path(inquiry), class: %w{btn btn-default btn-sm }
 
@@ -40,7 +40,7 @@
             %td{style: "width:25%; vertical-align:bottom;", valign:"bottom"}
               .pull-right
                 =link_to root_path, class: %w{btn btn-default btn-sm-x} do
-                  Invest!
+                  Lone money now!
           %tr
             %td
               %p=inquiry.rates_insured[:m_1].format
@@ -51,8 +51,9 @@
             %td
               .pull-right
                 =link_to root_path, class: %w{btn btn-default btn-sm-x} do
-                  Invest insured with
+                  Lone insured with
                   = image_tag 'aviva-logo.gif', height: 20
+                  !
           %tbody
             %tr
               %th 1 month

@@ -8,11 +8,11 @@
 
     = f.input :insured, as: :hidden
 
-  -#
-    %p
-      =link_to 'HumanLoan', root_path
-      is prototype. Would you be interested to invest into loans for real?
-      = f.input :option, as: :boolean, label: "Yes I'm interested"
+  %p
+    %i
+      P.s.: HumanLoan will get paid when and only if
+      = @inquiry.user.public_name
+      returns loan!
 
   = f.input :taker_id, as: :hidden
 

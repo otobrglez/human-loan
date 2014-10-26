@@ -4,6 +4,10 @@
 
 $(document).ready ->
 
+  $("body").on 'click', '.invest-btx', (e)->
+    form = $(e.currentTarget).parents('.modal-dialog').find('form')
+    form.trigger 'submit'
+
   $("#live-inquiries").on 'click', 'a.more-details', (e)->
     e.preventDefault() if e.preventDefault?
 

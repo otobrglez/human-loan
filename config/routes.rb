@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   root "inquiries#index"
 
-  resources :inquiries
-  resources :loan
+  resources :inquiries do
+    resources :loans, only: [:new, :create, :update, :edit]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

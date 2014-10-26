@@ -1,0 +1,8 @@
+var modal = $('<%= j render "modal" %>');
+$("body").append(modal);
+modal.modal().on('hidden.bs.modal', function (e) {
+  var tm = $(e.currentTarget).remove();
+  $(".modal-backdrop").fadeOut('fast', function(i){
+    $(this).remove();
+  });
+});

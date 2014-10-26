@@ -35,7 +35,7 @@
   .container
     .arr_down=" "
 
-    .row-x{style: 'padding: 10px; padding-top:0px;'}
+    .row-x{style: 'padding: 10px; padding-top:0px; padding-right:0px;'}
       %table.table.table-condensed.score-tabel
         %thead
           %tr
@@ -46,9 +46,9 @@
             %td{style: "width:25%"}
               %h1=inquiry.rates[:m_12].format
             %td{style: "width:25%; vertical-align:bottom;", valign:"bottom"}
-              .pull-right
-                =link_to root_path, class: %w{btn btn-default btn-sm-x} do
-                  Lone money now!
+              .pull-right-x
+                =link_to new_inquiry_loan_path(inquiry, loan:{taker_id: inquiry.user_id, insured: 0}), class: %w{btn btn-default btn-sm-x btn-red}, remote: true do
+                  %strong Invest now!
           %tr
             %td
               %p=inquiry.rates_insured[:m_1].format
@@ -57,9 +57,9 @@
             %td
               %p=inquiry.rates_insured[:m_12].format
             %td
-              .pull-right
-                =link_to root_path, class: %w{btn btn-default btn-sm-x} do
-                  Lone money now, insured with
+              .pull-right-x
+                =link_to new_inquiry_loan_path(inquiry, loan:{taker_id: inquiry.user_id, insured: 1}), class: %w{btn btn-default btn-sm-x btn-red btn-y}, remote: true do
+                  Invest now, insured with
                   = image_tag 'aviva-logo.gif', height: 10
                   !
           %tbody

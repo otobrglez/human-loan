@@ -1,5 +1,15 @@
 $hl_color_bg: #eee;
 
+.btn-red {
+  background-color: $hl_color_main;
+  background-color: #FFF;
+  width: 100%;
+}
+
+.btn-y {
+
+}
+
 #header {
   line-height: 50px;
 
@@ -91,6 +101,10 @@ ul#inquiries{
     }
 
     &.loan-given {
+      .inline-tools-wrap {
+        display: none;
+      }
+
       .amount-wrap h1 .n{
         text-decoration: line-through;
         color: #CCC;

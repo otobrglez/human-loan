@@ -8,11 +8,8 @@
       .container
         .col-sm-3.amount
           Loan amount / H. Score
-        .col-sm-6.reason
+        .col-sm-7.reason
           Reason
-        .col-sm-2=" "
-        .col-sm-1.expires_at
-          When?
 
     - inquiries = @inquiries.each_with_index do |inquiry, index|
       = render partial: 'inquiry_row', locals: {inquiry: inquiry}

@@ -1,4 +1,4 @@
-class LoansController < ApplicaitonController
+class LoansController < ApplicationController
 
   def new
 

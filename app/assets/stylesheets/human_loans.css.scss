@@ -91,12 +91,9 @@ ul#inquiries{
     }
 
     &.loan-given {
-      .amount-wrap h1 {
+      .amount-wrap h1 .n{
         text-decoration: line-through;
         color: #CCC;
-        small {
-          text-decoration: none;
-        }
       }
     }
   }

@@ -4,7 +4,7 @@ class Inquiry < ActiveRecord::Base
   validates :reason, presence: true, length: 20..200
 
   monetize :amount_cents
-  paginates_per 7
+  paginates_per 20
 
   scope :active, -> {
     joins(:user).order(created_at: :desc, expires_at: :asc)

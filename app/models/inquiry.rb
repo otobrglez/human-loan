@@ -29,7 +29,7 @@ class Inquiry < ActiveRecord::Base
   end
 
   BASIC_RATE = 0.052
-  AVIVA_RATE = 0.060
+  AVIVA_RATE = 0.085
   def rates_cp(rate=BASIC_RATE)
     numbers = (0..9).to_a
     numbers.map! { |n| rate + n*0.005 }

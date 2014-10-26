@@ -2,12 +2,7 @@
   .container
     .col-sm-3
       .amount-wrap
-        %h1
-          = inquiry.format_price
-          %small
-            \/
-            %span.badge.score{class: "c-#{inquiry.score}"}=inquiry.score
-
+        =raw "<h1>#{inquiry.amount.format}<small>/ <span class='badge c-#{inquiry.score}'>#{inquiry.score}</span></small></h1>"
     .col-sm-6.reason-col
       .col-reason-wrap
         .circle

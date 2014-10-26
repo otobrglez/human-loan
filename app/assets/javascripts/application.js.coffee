@@ -7,6 +7,7 @@ $(document).ready ->
   $("#live-inquiries").on 'click', 'a.more-details', (e)->
     e.preventDefault() if e.preventDefault?
 
+    return if $(e.currentTarget).parents('.inquiry').hasClass 'iq-open'
     $("li.inquiry").removeClass 'iq-open'
 
     next = (inquiry = $(e.currentTarget).parents('.inquiry')).next()

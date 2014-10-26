@@ -24,6 +24,12 @@ ul#inquiries{
 
     &.iq-open {
       border: none;
+
+      // @include background-image(linear-gradient(120deg, #2ac363, #cd8c14, #9c4cc2));
+
+      @include filter-gradient(#FFF, $hl_color_main, vertical);
+      @include background-image(linear-gradient(top, #F1F1F1 0%, #FFF 40%));
+
     }
 
     // background-color: $hl_color_bg;
@@ -48,7 +54,7 @@ ul#inquiries{
 
         .public_name {
           font-style: italic;
-          color: #CCC;
+          // color: #CCC;
         }
       }
     }
@@ -64,9 +70,9 @@ ul#inquiries{
   }
 
   li.inquiry-details{
-    -moz-box-shadow:    inset 0 0 3px #666;
-    -webkit-box-shadow: inset 0 0 3px #666;
-    box-shadow:         inset 0 0 3px #666;
+    -moz-box-shadow:    inset 0 0 5px #666;
+    -webkit-box-shadow: inset 0 0 5px #666;
+    box-shadow:         inset 0 0 5px #666;
     position: relative;
 
     .container{
@@ -80,7 +86,7 @@ ul#inquiries{
         left: 30px;
         background-position: top center;
         background-repeat: no-repeat;
-        background-image: image-url('arr_down.png');
+        background-image: image-url('arr_down_cl.png');
         background-size: 100%;
       }
     }

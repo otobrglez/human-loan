@@ -29,7 +29,7 @@
   .container
     .arr_down=" "
 
-    .row{style: 'padding: 10px'}
+    .row-x{style: 'padding: 10px; padding-top:0px;'}
       %table.table.table-condensed.score-tabel
         %thead
           %tr
@@ -62,7 +62,7 @@
               %th 6 months
               %th 1 year
               %td=" "
-      %p
+      %p.text-center
         Your potential repayments if you fund
         %strong=inquiry.user.public_name
         and if he or she repays you back. Repayments are calculated based on

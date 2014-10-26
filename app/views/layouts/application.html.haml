@@ -7,7 +7,7 @@
     = csrf_meta_tags
 
     %meta{name:"viewport", content:"width=device-width, initial-scale=1"}
-    %meta{name:"viewport", content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"}
+    -# %meta{name:"viewport", content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"}
   %body
     %header#header
       .container
@@ -22,7 +22,6 @@
             = link_to 'Sign out', sign_out_path, method: :delete
           - else
             = link_to 'Sign in', sign_in_path
-
 
     #flashes
       .container

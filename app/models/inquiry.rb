@@ -1,5 +1,5 @@
 class Inquiry < ActiveRecord::Base
-
+  has_many :loans
   belongs_to :user
   validates :reason, presence: true, length: 20..200
 
@@ -26,6 +26,10 @@ class Inquiry < ActiveRecord::Base
 
   def rates_insured
     @rates_insured ||= rates_cp(AVIVA_RATE)
+  end
+
+  def loan_given?
+    ! loans.empty?
   end
 
   BASIC_RATE = 0.052

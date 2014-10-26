@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141025122814) do
+ActiveRecord::Schema.define(version: 20141026094246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20141025122814) do
   end
 
   add_index "inquiries", ["user_id"], name: "index_inquiries_on_user_id", using: :btree
+
+  create_table "loans", force: true do |t|
+    t.integer  "giver_id"
+    t.integer  "taker_id"
+    t.integer  "inquiry_id"
+    t.integer  "option",     default: 0
+    t.integer  "insured",    default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "loans", ["giver_id"], name: "index_loans_on_giver_id", using: :btree
+  add_index "loans", ["taker_id"], name: "index_loans_on_taker_id", using: :btree
 
   create_table "users", force: true do |t|
     t.datetime "created_at",                     null: false

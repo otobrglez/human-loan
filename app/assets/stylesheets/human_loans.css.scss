@@ -80,7 +80,24 @@ ul#inquiries{
 
     .inline-tools-wrap {display: none;}
     &:hover {
+      background-color: #f2f2f2;
       .inline-tools-wrap {display: block;}
+    }
+
+    .loans{
+      border: 1px solid red;
+      display: block;
+      display: none;
+    }
+
+    &.loan-given {
+      .amount-wrap h1 {
+        text-decoration: line-through;
+        color: #CCC;
+        small {
+          text-decoration: none;
+        }
+      }
     }
   }
 

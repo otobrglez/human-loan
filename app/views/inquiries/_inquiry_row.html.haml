@@ -1,4 +1,4 @@
-%li.inquiry
+%li.inquiry{class: inquiry.loan_given? ? "loan-given": ""}
   .container
     .col-sm-3
       .amount-wrap
@@ -13,6 +13,11 @@
             = "- #{inquiry.user.public_name}"
             \/
             =distance_of_time_in_words_to_now inquiry.expires_at
+        - if inquiry.loan_given?
+          .loans
+            .circle
+              =image_tag inquiry.loans.first.giver.gravatar, width: 30
+
 
     .col-sm-2.inline-tools
       .inline-tools-wrap
@@ -25,7 +30,7 @@
               =link_to 'Details & Loaning', root_path, class: %w{btn btn-default btn-sm more-details}
 
 
-%li.inquiry-details
+%li.inquiry-details{class: inquiry.loan_given? ? "loan-given": ""}
   .container
     .arr_down=" "
 

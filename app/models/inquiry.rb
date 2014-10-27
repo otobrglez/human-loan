@@ -7,8 +7,19 @@ class Inquiry < ActiveRecord::Base
   paginates_per 20
 
   scope :active, -> {
-    joins(:user).order(created_at: :desc, expires_at: :asc)
+    joins(:user).order(score: :desc, created_at: :desc, expires_at: :asc)
   }
+
+  # def amount
+  #   cents = read_attribute(:amount) || 0
+  #   currency = read_attribute(:currency_as_string) || Money.default_currency
+  #   Money.new(cents, currency)
+  # end
+
+  # def amount=(value)
+  #   cash = Money.from_string(value)
+  #   write_attribute(:amount, cash.cents)
+  # end
 
   def format_price
     amount.format

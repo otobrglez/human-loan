@@ -42,6 +42,7 @@ class InquiriesController < ApplicationController
 
   def create
     @inquiry = current_user.inquiries.build(inquiry_params)
+
     if ! @inquiry.save
       render :new
     else
@@ -53,6 +54,7 @@ class InquiriesController < ApplicationController
   private
 
   def inquiry_params
-    params[:inquiry].permit(:amount_cents, :amount_currency, :expires_at, :reason)
+    params[:inquiry].permit!
+    # params[:inquiry].permit(:amount, :amount_cents, :amount_currency, :expires_at, :reason)
   end
 end

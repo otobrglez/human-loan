@@ -1,5 +1,6 @@
 # encoding : utf-8
 
+Money.default_currency = Money::Currency.new("USD")
 MoneyRails.configure do |config|
   # config.default_currency = :gbp
   # config.default_bank = EuCentralBank.new

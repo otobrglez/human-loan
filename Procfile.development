@@ -1,4 +1,1 @@
 db: postgres -D db/pg-data
-# web: bundle exec puma -C config/puma.rb
-# redis: redis-server config/development.redis.conf
-

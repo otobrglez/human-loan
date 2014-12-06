@@ -1,5 +1,9 @@
 # human-loan
 
+Proof-of-concept for peer-to-peer loans.
+
+- [Oto Brglez](https://github.com/otobrglez)
+
 ## Database
 
     initdb \

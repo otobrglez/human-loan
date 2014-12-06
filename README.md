@@ -20,10 +20,6 @@ Proof-of-concept for peer-to-peer loans.
     rake db:setup; rake db:migrate
     foreman start
 
-## Proxy notes
+## Licence
 
-    curl -v -x http://torrero-main:3113 -s http://www.telize.com/ip
-
-    aria2c --http-proxy=http://torrero-main:3113 http://www.telize.com/ip
-
-
+[LGPL](https://www.gnu.org/licenses/lgpl.html)

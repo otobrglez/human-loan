@@ -2,6 +2,8 @@
 
 Proof-of-concept for peer-to-peer loans.
 
+Demo ~> [www.humanloan.com](http://www.humanloan.com)
+
 - [Oto Brglez](https://github.com/otobrglez)
 
 ## Database
